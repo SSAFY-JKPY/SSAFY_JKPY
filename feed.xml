@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/" rel="alternate" type="text/html" /><updated>2022-04-14T11:06:35+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>GitHub User</name></author><entry><title type="html">CSS POSITION &amp;amp; FLOAT</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/04/05/study-css_position-copy.html" rel="alternate" type="text/html" title="CSS POSITION &amp;amp; FLOAT" /><published>2022-04-05T00:00:00+00:00</published><updated>2022-04-05T18:40:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/04/05/%5Bstudy%5Dcss_position%20copy</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/04/05/study-css_position-copy.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;css-position&quot;&gt;CSS Position&lt;/h2&gt;
+
+&lt;h4 id=&quot;css의-position이란&quot;&gt;CSS의 Position이란?&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;웹 페이지에서 문서 상의 요소를 배치하는 방법을 지정하는 속성&lt;/li&gt;
+  &lt;li&gt;좌표를 지정하기 위해 left, right, top, bottom 속성과 함께 사용한다.&lt;/li&gt;
+  &lt;li&gt;position을 absolute나 fixed로 설정할 시 가로 크기가 100%인 block 요소들의 특징이 사라지게 된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;css-position-종류&quot;&gt;CSS Position 종류&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;static
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_position_static.jpg&quot; alt=&quot;CSS Position Static&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;position 속성값 중 default 값&lt;/li&gt;
+      &lt;li&gt;다른 태그와의 관계가 그대로 적용되며, 다른 속성을 통해 위치를 임의로 바꾸는 것이 가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;absolute
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_position_absolute.jpg&quot; alt=&quot;CSS Position Absolute&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;요소를 일반적인 문서 흐름에서 제거하고 절대적인 좌표를 통해 위치를 지정한다.&lt;/li&gt;
+      &lt;li&gt;초기 컨테이닝 블록(Containing Block)을 기준으로 한다.
+&lt;strong&gt;position:absolute;일 때 컨테이닝 블록: position 속성값이 static이 아닌 가장 가까운 조상 엘리먼트&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;절대 좌표의 값은 left, right, top, bottom을 통해 지정할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;relative
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_position_relative.jpg&quot; alt=&quot;CSS Position Relative&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;자기 자신의 본래 위치를 기준으로 상대적 위치를 계산하여 현 위치를 지정한다.&lt;/li&gt;
+      &lt;li&gt;상대적 위치값은 left, right, top, bottom을 통해 지정할 수 있다.&lt;/li&gt;
+      &lt;li&gt;자식 엘리먼트의 크기에 따라 부모 엘리먼트의 크기가 자동으로 변하지만, 엘리먼트의 위치에 따라 변하지는 않는다.&lt;/li&gt;
+      &lt;li&gt;뒤에 연속하여 오는 엘리먼트들에게 영향을 주지 않는다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;fixed
+    &lt;ul&gt;
+      &lt;li&gt;요소를 일반적인 문서 흐름에서 제거하고, 문서의 가장 좌측 상단을 기준으로 스크롤에 관계 없는 고정 위치를 잡는다.&lt;/li&gt;
+      &lt;li&gt;실질적으로 위치 기준은 뷰포트(viewport, 현재 화면에 보여지고 있는 다각형의 영역)나 페이지 영역이다.&lt;/li&gt;
+      &lt;li&gt;절대 좌표의 값은 left, right, top, bottom을 통해 지정할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sticky
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_position_sticky.jpg&quot; alt=&quot;CSS Position Sticky&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;스크롤 위치에 따라 스크롤이 임계점을 넘어가면 fixed로 동작시킨다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;inherit
+    &lt;ul&gt;
+      &lt;li&gt;부모 태그의 속성을 그대로 상속받는다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;initial
+    &lt;ul&gt;
+      &lt;li&gt;요소의 속성값을 초기화 하는 것.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;float이란&quot;&gt;Float이란?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;float은 display의 flexbox를 사용하기 이전에 많이 사용하던 레이아웃 방식이다.&lt;/li&gt;
+  &lt;li&gt;해당하는 엘리먼트를 문서의 일반적 흐름에서 빠져나오게 한 뒤, 해당 엘리먼트 주변의 텍스트 및 인라인 요소가 엘리먼트 주변에 어떻게 배치될지를 결정한다.&lt;/li&gt;
+  &lt;li&gt;float에 left를 하는 경우
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_float_left.jpg&quot; alt=&quot;CSS Float Left&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;float에 right를 하는 경우
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_float_right.jpg&quot; alt=&quot;CSS Float Right&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>GitHub User</name></author><category term="Web" /><category term="CSS" /><category term="static" /><category term="absolute" /><category term="fixed" /><category term="relative" /><category term="inherit" /><category term="float" /><summary type="html">How to use CSS Position properly(feat. Float)</summary></entry><entry><title type="html">Linux</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/linux/2022/03/30/study-linux.html" rel="alternate" type="text/html" title="Linux" /><published>2022-03-30T00:00:00+00:00</published><updated>2022-03-30T20:40:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/linux/2022/03/30/%5Bstudy%5Dlinux</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/linux/2022/03/30/study-linux.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;linux&quot;&gt;LINUX&lt;/h2&gt;
+
+&lt;h4 id=&quot;linux란&quot;&gt;LINUX란?&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LINUX는 오픈소스 운영체제(Operating System, OS)로서, CPU, 메모리, 스토리지와 같은 시스템 하드웨어와 리소스를 직접 관리하는 소프트웨어이다.&lt;/li&gt;
+  &lt;li&gt;그러나 실제로는 OS라기 보다는 OS의 핵심 소스코드 역할인 커널이다.&lt;/li&gt;
+  &lt;li&gt;OS = App(응용 프로그램) + Shell ==&amp;gt; 즉, 리눅스에 App과 Shell을 추가하여 만든 하나의 운영체제를 리눅스 배포판이라고 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Shell: 운영체제 내부에 접근하기 위한 프로그램. 시스템 사용자와 커널의 인터페이스 역할을 담당한다. 즉, 커널을 제어할 수 있는 프로그램이다. 단, 모든 OS에 반드시 포함되지는 않는다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;linux-구조&quot;&gt;LINUX 구조&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/linux structure.png&quot; alt=&quot;LINUX Structure&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UNIX와 상당 부분 유사하게 설계되어 있다.&lt;/li&gt;
+  &lt;li&gt;하드웨어 위에 운영체제가 있고, 운영체제가 제공해주는 환경에서 응용 프로세스들이 실행된다.&lt;/li&gt;
+  &lt;li&gt;LINUX 포함 요소
+    &lt;ul&gt;
+      &lt;li&gt;커널: OS의 기본 구성 요소&lt;/li&gt;
+      &lt;li&gt;시스템 사용자 공간: 설정 및 소프트웨어 설치와 같은 시스템 수준 태스크를 위한 관리 계층.&lt;/li&gt;
+      &lt;li&gt;애플리케이션: 태스크를 수행할 수 있도록 지원하는 소프트웨어 유형.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그 중 핵심은 커널(Kernel)로서, 커널의 역할은 다음과 같다.
+    &lt;ul&gt;
+      &lt;li&gt;OS를 구성하는 프로세서와 OS의 제어로 수행되는 프로그램에 대하여 자원을 할당하는 역할을 한다.&lt;/li&gt;
+      &lt;li&gt;프로세스 관리, 메모리 관리, 태스크 관리, 시스템 관리 등이 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;커널은 항상 메인 메모리에 상주하며 하드웨어를 추상화시켜 사용자 레벨 프로세스에 서비스를 제공한다. ==&amp;gt; 시스템 콜 방식 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;시스템콜(System Call): 운영 체제의 커널이 제공하는 서비스에 대해, 응용 프로그램의 요청에 따라 커널에 접근하기 위한 인터페이스.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;linux-특징&quot;&gt;LINUX 특징&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LINUX는 프로세스를 제외한 모든 것을 파일로 취급한다. 디렉토리 역시도 파일이다.
+    &lt;ul&gt;
+      &lt;li&gt;프로세스: 컴퓨터 내에서 프로그램을 실행하는 주체.&lt;/li&gt;
+      &lt;li&gt;파일: LINUX 시스템 내의 모든 정적 요소&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;LINUX의 파일 시스템은 “/”에서 파일 관리를 시작한다. 이 경로는 Root 경로이다.
+    &lt;ul&gt;
+      &lt;li&gt;파일 시스템: 파일을 관리하는 방법&lt;/li&gt;
+      &lt;li&gt;파일 시스템의 이름은 NTFS, EXT4, FAT32 등이 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;윈도우의 디렉토리와 리눅스의 디렉토리는 다음과 같이 대응한다.
+    &lt;ul&gt;
+      &lt;li&gt;윈도우 Program Files: 리눅스 /bin&lt;/li&gt;
+      &lt;li&gt;윈도우 Windows\System: 리눅스 /sbin&lt;/li&gt;
+      &lt;li&gt;윈도우 “사용자”: 리눅스 Home&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;linux-장단점&quot;&gt;LINUX 장단점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;장점&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;무료&lt;/li&gt;
+      &lt;li&gt;CLI를 기반으로 사용하면 매우 가볍다.&lt;/li&gt;
+      &lt;li&gt;네트워킹 기능이 강력하다. ==&amp;gt; 다중 사용자&lt;/li&gt;
+      &lt;li&gt;다른 플랫폼에 대한 이식성이 뛰어나다.&lt;/li&gt;
+      &lt;li&gt;다양한 파일 시스템을 지원한다.&lt;/li&gt;
+      &lt;li&gt;보안성이 비교적 뛰어나다.&lt;/li&gt;
+      &lt;li&gt;다양한 응용 프로그램이 존재한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;단점&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;기술 지원이 부족하다.&lt;/li&gt;
+      &lt;li&gt;특정 하드웨어에 대해서는 따로 세팅이 필요하다.&lt;/li&gt;
+      &lt;li&gt;사용자의 진입장벽이 높다.&lt;/li&gt;
+      &lt;li&gt;꾸준한 업데이트에 따라가기 위해 사용 방법에 대한 공부가 지속적으로 필요하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;linux-기본-명령어&quot;&gt;LINUX 기본 명령어&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;터미널 실행: [Ctrl] + [Alt] + T&lt;/li&gt;
+  &lt;li&gt;터미널 종료: exit&lt;/li&gt;
+  &lt;li&gt;디렉토리 목록: ls&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a 옵션: 숨김파일까지 출력 &amp;lt;== 숨김파일은 .으로 시작한다.&lt;/li&gt;
+  &lt;li&gt;l 옵션: 리스트 형태로 상세 보기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;컴퓨터 종료: sudo halt -p&lt;/li&gt;
+  &lt;li&gt;컴퓨터 재시작: sudo reboot&lt;/li&gt;
+  &lt;li&gt;복사: [Ctrl] + [Insert]&lt;/li&gt;
+  &lt;li&gt;붙여넣기: [Shift] + [Insert]&lt;/li&gt;
+  &lt;li&gt;터미널 스크롤 올리기: [Shift] + [PageUp]&lt;/li&gt;
+  &lt;li&gt;현재 디렉토리 확인: pwd&lt;/li&gt;
+  &lt;li&gt;화면(콘솔 창) 지우기: clear OR [Ctrl] + l&lt;/li&gt;
+  &lt;li&gt;디렉토리 이동: cd [디렉토리 이름]&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;cd .. : 상위 디렉토리로 이동&lt;/li&gt;
+  &lt;li&gt;cd ~ : 홈 디렉토리로 이동&lt;/li&gt;
+  &lt;li&gt;cd - : 이전 디렉토리로 되돌아가기&lt;/li&gt;
+  &lt;li&gt;cd / : 루트 디렉토리로 이동&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;새 탭 열기: [Ctrl] + [Shift] + T&lt;/li&gt;
+  &lt;li&gt;탭 전환: [Alt] + 1, 2, 3…&lt;/li&gt;
+  &lt;li&gt;탭 닫기: [Ctrl] + [Shift] + W&lt;/li&gt;
+  &lt;li&gt;화면 출력 중단: [Ctrl] + S&lt;/li&gt;
+  &lt;li&gt;화면 출력 재시작: [Ctrl] + Q&lt;/li&gt;
+  &lt;li&gt;파일 복사: cp [파일명 or 폴더명]&lt;/li&gt;
+  &lt;li&gt;새로운 빈 파일 생성: touch [파일명]&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 이름을 공백으로 구분하여 기재하면 동시에 생성 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;파일 삭제: rm [파일명]&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 이름을 공백으로 구분하여 기재하면 동시에 삭제 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;디렉토리 생성: mkdir [디렉토리명]&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;p 옵션: 디렉토리 하위 메뉴까지 동시에 생성한다.&lt;/li&gt;
+  &lt;li&gt;ex) mkdir -p ./aaa/bbb/ccc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;디렉토리 삭제: rmdir [디렉토리명]&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본적으로는 디렉토리 안에 파일이 있으면 삭제가 되지 않는다.&lt;/li&gt;
+  &lt;li&gt;r 옵션: 디렉토리 내부 파일까지 모두 삭제한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;명령어 내역 출력: history&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;![번호] : history의 출력 결과 중 번호에 해당하는 명령어를 실행한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;apt&quot;&gt;APT&lt;/h2&gt;
+
+&lt;h4 id=&quot;apt-1&quot;&gt;APT&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;빌드 된 패키지 설치할 수 있게 돕는 프로그램&lt;/li&gt;
+  &lt;li&gt;빌드 전 소스코드 형태 패키지 설치 가능(직접 빌드 필요)&lt;/li&gt;
+  &lt;li&gt;CLI로 구성되어 있다.&lt;/li&gt;
+  &lt;li&gt;GUI로는 우분투 소프트웨어가 있으나, 우분투 소프트웨어는 빌드 된 패키지만 설치가 가능하다.&lt;/li&gt;
+  &lt;li&gt;apt는 dependency(의존 패키지)를 자동으로 관리해주기에 어떤 프로그램을 다운로드 받을 때 중간 과정을 모두 수동으로 거칠 필요가 없다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;sudo&quot;&gt;sudo&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;관리자 권한으로 명령어를 수행할 때 사용하는 명령어&lt;/li&gt;
+  &lt;li&gt;sudo를 사용하려면 root로부터 권한을 부여받아야 한다.&lt;/li&gt;
+  &lt;li&gt;시스템에 영향이 갈 것 같은 명령어에는 본 명령어를 바탕으로 사용해야 한다.&lt;/li&gt;
+  &lt;li&gt;프로그램 설치, 삭제, 서버 환경설정, 버전 변경 등에는 필수적.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;apt-관련-명령어&quot;&gt;APT 관련 명령어&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;설치된 apt list 출력: apt list –installed&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;apt라는 프로그램(파일)을 실행&lt;/li&gt;
+  &lt;li&gt;list: apt의 명령&lt;/li&gt;
+  &lt;li&gt;–installed : 옵션&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;특정 이름을 포함한 apt list 출력: apt list&lt;/td&gt;
+          &lt;td&gt;grep &lt;키워드&gt;&lt;/키워드&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;대상 파일 삭제: apt remove &lt;대상&gt;&lt;/대상&gt;&lt;/li&gt;
+  &lt;li&gt;대상 파일 삭제 및 관련 설정 파일 삭제: apt purge &lt;대상&gt;&lt;/대상&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>GitHub User</name></author><category term="Linux" /><category term="Linux" /><summary type="html">About Linux and useful commands</summary></entry><entry><title type="html">CSS Display</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/30/study-css_display.html" rel="alternate" type="text/html" title="CSS Display" /><published>2022-03-30T00:00:00+00:00</published><updated>2022-03-30T20:40:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/30/%5Bstudy%5Dcss_display</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/30/study-css_display.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;css-display&quot;&gt;CSS Display&lt;/h2&gt;
+
+&lt;h4 id=&quot;css의-display란&quot;&gt;CSS의 Display란?&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;웹 페이지에서 element들이 어떻게 보여지고 다른 element와 어떻게 상호작용할지를 정하는 배치 속성&lt;/li&gt;
+  &lt;li&gt;박스 유형을 결정 짓는다.&lt;/li&gt;
+  &lt;li&gt;요소들의 위치를 결정짓는 속성인 position과 float에 비해 우선도가 떨어진다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;css-display-종류&quot;&gt;CSS Display 종류&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;block
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_display_block.jpg&quot; alt=&quot;CSS Display Block&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;가로 한 줄을 다 차지&lt;/li&gt;
+      &lt;li&gt;모든 margin, padding 요소가 적용 가능하다.&lt;/li&gt;
+      &lt;li&gt;ex) div, p, h1…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;inline
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_display_inline.jpg&quot; alt=&quot;CSS Display Inline&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;줄 바꿈 없이 나란히 배치된다.&lt;/li&gt;
+      &lt;li&gt;width, height 속성 지정 불가&lt;/li&gt;
+      &lt;li&gt;margin과 padding의 top, bottom 간격 지정 불가&lt;/li&gt;
+      &lt;li&gt;ex) span, a…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;inline-block
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_display_inlineblock.jpg&quot; alt=&quot;CSS Display Inline_Block&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;inline과 block의 특성을 같이 가지고 있다.&lt;/li&gt;
+      &lt;li&gt;전후 줄 바꿈 없이 나란히 배치된다. &amp;lt;== inline&lt;/li&gt;
+      &lt;li&gt;width, height 속성 지정 가능 &amp;lt;== block&lt;/li&gt;
+      &lt;li&gt;margin, padding 상하 간격 지정이 가능하다. &amp;lt;== block&lt;/li&gt;
+      &lt;li&gt;ex) button, select…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;flex
+&lt;br /&gt;&lt;img src=&quot;/assets/img/css_display_flex.jpg&quot; alt=&quot;CSS Display Flex&quot; /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;메인 축을 기반으로 정렬을 진행한다.&lt;/li&gt;
+      &lt;li&gt;flex를 선언한 부모 요소는 flex-container로, 자식 요소들은 flex-item들로 역할한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;flex&quot;&gt;Flex&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;img src=&quot;/assets/img/css_flex.png&quot; alt=&quot;CSS Display Flex&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Flex Container 속성&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;display: flex container를 정의&lt;/li&gt;
+      &lt;li&gt;flex-flow: flex-direction과 flex-wrap의 단축 속성&lt;/li&gt;
+      &lt;li&gt;flex-direction: flex 속성의 정렬 기준, 즉 주축(main-axis)을 설정&lt;/li&gt;
+      &lt;li&gt;flex-wrap: flex item들의 여러 줄 묶음(줄 바꿈) 설정&lt;/li&gt;
+      &lt;li&gt;justify-content: 주 축의 정렬 방법 설정&lt;/li&gt;
+      &lt;li&gt;align-content: 교차 축(cross-axis)의 정렬 방법 설정&lt;/li&gt;
+      &lt;li&gt;align-items: 교차 축에서 items의 정렬 방법 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Flex Items 속성&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;order: flex item의 순서 설정&lt;/li&gt;
+      &lt;li&gt;flex: flex-grow, flex-shrink, flex-basis의 단축 속성&lt;/li&gt;
+      &lt;li&gt;flex-grow: flex item의 증가 너비 비율 설정&lt;/li&gt;
+      &lt;li&gt;flex-shrink: flex item의 감소 너비 비율 설정&lt;/li&gt;
+      &lt;li&gt;flex-basis: flex item의 기본 너비 설정&lt;/li&gt;
+      &lt;li&gt;align-self: 교차 축에서 item의 정렬 방법 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>GitHub User</name></author><category term="Web" /><category term="CSS" /><category term="flex" /><category term="block" /><category term="inline" /><category term="inline-block" /><summary type="html">How to use CSS Display properly</summary></entry><entry><title type="html">Axios</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/22/study-axios.html" rel="alternate" type="text/html" title="Axios" /><published>2022-03-22T00:00:00+00:00</published><updated>2022-03-23T20:40:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/22/%5Bstudy%5Daxios</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/22/study-axios.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;axios&quot;&gt;Axios&lt;/h2&gt;
+
+&lt;h4 id=&quot;axios란&quot;&gt;Axios란?&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리이다.&lt;/li&gt;
+  &lt;li&gt;React.js와 Vue.js에서 데이터를 fetch하는 기본 라이브러리이며, 현대 프론트엔드 프레임워크들은 Axios를 주로 사용하고 있다.&lt;/li&gt;
+  &lt;li&gt;서버 측에서는 기본 node.js http 모듈을 사용하고, 클라이언트(브라우저)에서는 XMLHttpRequests를 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;axios-특징&quot;&gt;Axios 특징&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;브라우저에서 XMLHttpRequests를 만든다.&lt;/li&gt;
+  &lt;li&gt;node.js에서 http요청을 만든다.&lt;/li&gt;
+  &lt;li&gt;Promise API를 지원한다.&lt;/li&gt;
+  &lt;li&gt;요청 및 응답 가로채기가 가능하다.&lt;/li&gt;
+  &lt;li&gt;요청 및 응답 데이터를 변환하는 것이 가능하다.&lt;/li&gt;
+  &lt;li&gt;HTTP 요청을 취소하는 것이 가능하다.&lt;/li&gt;
+  &lt;li&gt;HTTP 요청과 응답을 JSON 형태로 자동 변환을 해준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;axios-사용-방법&quot;&gt;Axios 사용 방법&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;설치&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* npm 방법 */
+npm install axios
+
+/* bower 방법 */
+bower install axios
+
+/* yarn 방법 */
+yarn add axios
+
+/* jsDelivr CDN 방법 */
+&amp;lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+
+/* unpkg CDN 방법 */
+&amp;lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용 문법 예시&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;axios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;https://www.JKPY.com/study/web&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;취직 좀 하자 좀!!!!!!!!!!!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;axios 요청 파라미터&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;url&lt;/strong&gt;: 요청을 보내고자 하는 서버의 주소&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;method&lt;/strong&gt;: 요청 방식(CRUD 중 하나)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;baseURL&lt;/strong&gt;: url을 상대 경로로 쓸 때 가장 앞에서 기반이 될 url&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;headers&lt;/strong&gt;: 요청 헤더&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;data&lt;/strong&gt;: 요청의 method에 따라 서버에 전달할 데이터를 담는 항목(body)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;params&lt;/strong&gt;: get 방식으로 요청을 보낼 때 query에 담을 내용&lt;/li&gt;
+      &lt;li&gt;timeout: 요청이 전달되기 전 millisecond 단위의 시간을 요청&lt;/li&gt;
+      &lt;li&gt;responseType: 서버가 응답해주는 데이터의 타입(arraybuffer, document, json, text, stream, blob)&lt;/li&gt;
+      &lt;li&gt;responseEncoding: 디코딩 응답에 사용하기 위한 인코딩(utf-8)&lt;/li&gt;
+      &lt;li&gt;transformRequest: 서버에 전달되기 전에 요청 데이터를 바꿀 수 있다.(PUT, POST, PATCH, DELETE의 경우만 가능)&lt;/li&gt;
+      &lt;li&gt;transformResponse: 응답 데이터가 만들어지기 전에 변환 가능&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;withCredentials&lt;/strong&gt;: cross-site access-control 요청 허용 유무&lt;/li&gt;
+      &lt;li&gt;auth: HTTP의 기본 인증에 사용. auth를 통해서 HTTP의 기본 인증 구성 가능&lt;/li&gt;
+      &lt;li&gt;maxContentLength: http 응답 내용의 max 사이즈를 지정하도록 하는 옵션&lt;/li&gt;
+      &lt;li&gt;validateStatus: HTTP 응답 상태 코드에 대해 promise의 반환 값이 resolve 또는 reject할지 지정하도록 하는 옵션&lt;/li&gt;
+      &lt;li&gt;maxRedirects: node.js에서 사용되는 리다이렉트 최대치를 지정&lt;/li&gt;
+      &lt;li&gt;httpAgent / httpsAgent: node.js에서 http나 https를 요청할 때 사용자 정의 agent를 정의하는 옵션&lt;/li&gt;
+      &lt;li&gt;proxy: proxy 서버의 hostname과 port를 정의하는 옵션&lt;/li&gt;
+      &lt;li&gt;cancelToken: 요청을 취소하는데 사용되는 취소 토큰 명시&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;h4 id=&quot;axios-응답-예시&quot;&gt;Axios 응답 예시&lt;/h4&gt;
+
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// 서버 제공 응답&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// 서버 응답의 http 상태 코드&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;statusText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;OK&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// 서버 응답의 http 상태 메시지&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// 요청에 대해 axios에 설정된 구성&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// 응답을 생성한 요청&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>GitHub User</name></author><category term="Web" /><category term="Axios" /><category term="Server" /><category term="Network" /><summary type="html">Axios</summary></entry><entry><title type="html">Restful API</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/22/study-restapi.html" rel="alternate" type="text/html" title="Restful API" /><published>2022-03-22T00:00:00+00:00</published><updated>2022-03-22T20:40:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/22/%5Bstudy%5Drestapi</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/web/2022/03/22/study-restapi.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;restful-api&quot;&gt;RESTful API&lt;/h2&gt;
+
+&lt;h4 id=&quot;restful-api란&quot;&gt;RESTful API란?&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;REST란 Representational State Transfer의 약자이다.&lt;/li&gt;
+  &lt;li&gt;API(Application Programming Interface)는 Application Software를 구축하고 통합하는 정의 및 프로토콜 세트이다.&lt;/li&gt;
+  &lt;li&gt;즉, REST API는 REST 아키텍처의 제약 조건하에 있는 애플리케이션 프로그래밍 인터페이스를 의미한다.&lt;/li&gt;
+  &lt;li&gt;REST는 URI를 통해 자원을 표시하고, HTTP METHOD를 통해 해당 자원을 통한 행위를 명시하여 결과를 클라이언트에 전달하는 것이다.&lt;/li&gt;
+  &lt;li&gt;RESTful API를 통해 요청이 수행되면 RESTful API는 리소스 상태에 대한 표현을 요청자에게 전송하는데, 이 때의 정보 혹은 표현은 HTTP: JSON(Javascript Object Notation), HTML, XLT 또는 일반 텍스트 형식이 될 수 있다. 이 중 JSON은 인간과 기계가 모두 읽을 수 있기에 가장 널리 사용되고 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;rest-구성&quot;&gt;REST 구성&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자원(RESOURCE)&lt;/li&gt;
+  &lt;li&gt;행위(Verb)&lt;/li&gt;
+  &lt;li&gt;표현(Representations)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;restful-api의-기준제약조건&quot;&gt;RESTful API의 기준(제약조건)&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;인터페이스의 일관성:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;요청된 리소스가 식별 가능해야 하며 클라이언트에 전송된 표현과 분리되어야 한다.&lt;/li&gt;
+      &lt;li&gt;수신한 표현을 통해 클라이언트가 리소스를 조작할 수 있어야 한다.&lt;/li&gt;
+      &lt;li&gt;클라이언트에 반환되는 자기 기술적(self-descriptive) 메시지에 클라이언트가 정보를 어떻게 처리해야 할지 설명하는 정보가 충분히 포함되어야 한다.&lt;/li&gt;
+      &lt;li&gt;클라이언트가 리소스에 액세스한 후 하이퍼링크를 사용해 현재 수행 가능한 기타 모든 작업을 찾을 수 있어야 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;무상태(Stateless): 각 요청 간 클라이언트의 콘텍스트가 서버에 저장되어서는 안된다.&lt;/li&gt;
+  &lt;li&gt;캐시 처리 가능(Cacheable): www에서와 같이 클라이언트는 응답을 캐싱할 수 있어야 한다. -&amp;gt; 클라이언트-서버 간 상호작용을 부분적 혹은 완전히 제거하여 scalabiliy와 성능을 향상&lt;/li&gt;
+  &lt;li&gt;계층화(Layered System): 중간 서버는 로드 밸런싱 기능이나 공유 캐시 기능을 제공함으로써 시스템 규모 확장성을 향상시키는데 유용하다.&lt;/li&gt;
+  &lt;li&gt;Code on demand: 자바 애플릿이나 자바스크립트 제공을 통해 서버가 클라이언트가 실행시킬 수 있는 로직을 전송하여 기능을 확장시킬 수 있다.&lt;/li&gt;
+  &lt;li&gt;클라이언트-서버 구조: 아키텍처를 단순화시키고 작은 단위로 분리함으로써 클라이언트-서버의 각 파트가 독립적으로 개선될 수 있도록 한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;rest-api-중심-규칙&quot;&gt;REST API 중심 규칙&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;URI는 정보의 자원을 표현해야 한다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;리소스명은 명사를 사용하는 것이 보다 타당하며, 행위에 대한 표현은 지양하는 것이 좋다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자원에 대한 행위는 HTTP Method(GET, POST, PUT, PATCH, DELETE)로 표현한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;슬래시(/)는 계층 관계를 나타낸다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URI의 마지막은 슬래시(/)를 사용하지 않는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URI의 가독성을 높이기 위해서는 언더바(_)가 아닌 하이픈(-)을 사용한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URI에 포함되는 단어는 소문자로 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;파일 확장자는 URI에 포함하지 않는다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;rest-api-장단점&quot;&gt;REST API 장단점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;장점&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;REST API의 내용은 직관적으로 의도를 이해할 수 있기에 사용이 쉽다.&lt;/li&gt;
+      &lt;li&gt;서버와 클라이언트의 분리로 사용과 관리가 원활하다.&lt;/li&gt;
+      &lt;li&gt;JSON 타입의 데이터를 통해 통신함으로써 서버와 클라이언트 각각이 서로에 대한 의도를 파악하기 쉽다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;단점&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;메소드 형태가 단순하면서도 제한적이어서 복합적인 과정을 요청하기 어렵다.&lt;/li&gt;
+      &lt;li&gt;표준이 존재하지 않아 형태가 실로 다양해질 수 있다. 따라서 일반적으로 약속된 형식을 지키는 것이 중요하다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;crud&quot;&gt;CRUD&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GET
+    &lt;ul&gt;
+      &lt;li&gt;서버로부터 데이터를 조회하기 위해 사용. URL에 전달 데이터의 흔적이 남는다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;POST
+    &lt;ul&gt;
+      &lt;li&gt;서버의 자원을 생성하기 위해 사용.&lt;/li&gt;
+      &lt;li&gt;게시글 작성, 회원가입, 로그인 처리 등에 주로 사용.&lt;/li&gt;
+      &lt;li&gt;GET의 역할을 대신하는 것도 가능하며, 전달 데이터를 숨길 수 있기에 GET 방식에 비해 보안성이 더 높다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;PUT/PATCH
+    &lt;ul&gt;
+      &lt;li&gt;서버의 데이터를 수정하기 위해 사용&lt;/li&gt;
+      &lt;li&gt;PUT은 덮어쓰기, PATCH는 부분수정이라고 할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DELETE
+    &lt;ul&gt;
+      &lt;li&gt;서버의 데이터를 삭제하기 위해 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Put vs Patch&lt;/strong&gt;: Put이 리소스의 전체를 교체하는 한편, Patch는 리소스의 일부를 수정한다. 그렇기에 명령어를 사용할 때도 Put은 모든 데이터를 다 명시해야 하지만, Patch는 일부 데이터만 명시하여도 수정이 가능하다.&lt;/p&gt;</content><author><name>GitHub User</name></author><category term="Web" /><category term="Restful API" /><category term="Server" /><category term="Network" /><summary type="html">Kinds of Restful API, and what they mean</summary></entry><entry><title type="html">Kruskal Algorithm</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/16/study-kruskal.html" rel="alternate" type="text/html" title="Kruskal Algorithm" /><published>2022-03-16T00:00:00+00:00</published><updated>2022-03-16T22:42:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/16/%5Bstudy%5Dkruskal</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/16/study-kruskal.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;크루스칼-알고리즘kruskal-algorithm&quot;&gt;크루스칼 알고리즘(Kruskal Algorithm)&lt;/h2&gt;
+
+&lt;h3 id=&quot;개념&quot;&gt;개념&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최소 비용 간선을 하나씩 추가하며 최소 신장 트리를 만드는 알고리즘.&lt;/li&gt;
+  &lt;li&gt;간선을 추가하며 사이클이 발생하는 경우에는 그 간선을 추가하지 않는 방식으로 예외 처리를 한다.&lt;/li&gt;
+  &lt;li&gt;알고리즘 과정
+    &lt;ol&gt;
+      &lt;li&gt;모든 노드들을 초기화. 각 노드는 자신만을 포함하는 그룹에 속하게 된다.&lt;/li&gt;
+      &lt;li&gt;비용이 가장 작은 간선을 선택한다.
+2-1. 해당 간선에 포함된 노드들이 서로 같은 그룹에 속해 있지 않으면 간선을 추가하고, 두 노드의 그룹을 하나로 합친다.
+2-2. 해당 간선에 포함된 노드들이 같은 그룹에 속해 있다면 사이클을 만들게 되므로 간선을 추가하지 않는다.&lt;/li&gt;
+      &lt;li&gt;만약 모든 노드들이 하나의 그룹에 속하게 되었다면 반복을 종료하고, 그렇지 않다면 2번 과정을 반복한다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;수행 시간은 O(ElogV)이다.&lt;/li&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;queue&amp;gt;
+#include &amp;lt;string&amp;gt;
+#include &amp;lt;cstring&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;math.h&amp;gt;
+#include &amp;lt;cstring&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Edge&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;- union-find에서 필수적인 배열!!!!!&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// parents &amp;lt;- 부모 확인, 조상까지 타고가기 위해&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// x의 조상찾기, 그룹의 소유자(root)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Find(parents[x]) : 조상값을 받아오는 역할&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// a가 속한 그룹, b가 속한 그룹을 합쳐라!!!&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;parents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// pa가 pb밑으로 들어감. &amp;lt;- 반대의 경우도 상관없음&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;kruskal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;parents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;parents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 조상판별, 모두가 개별적으로 따로 있다.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Edge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// MST, Kruskal&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 1. cost가 작은 edge부터 확인&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ElogE == ElogN&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// MST를 구성할때 사용한 총 cost&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// E&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 2. cylce 판정&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 같은 그룹이면 무시&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;kruskal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>CH</name></author><category term="Algorithm" /><category term="Basic" /><summary type="html">Study for Kruskal Algorithm</summary></entry><entry><title type="html">Time Complexity</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/15/study-time_complexity.html" rel="alternate" type="text/html" title="Time Complexity" /><published>2022-03-15T00:00:00+00:00</published><updated>2022-03-15T22:42:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/15/%5Bstudy%5Dtime_complexity</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/15/study-time_complexity.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;시간복잡도time-complexity의-표기법&quot;&gt;시간복잡도(Time Complexity)의 표기법&lt;/h2&gt;
+
+&lt;h3 id=&quot;o-표기법&quot;&gt;O-표기법&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;O(g(n))은 충분히 큰 n에 대하여 f(n)&amp;lt;=cg(n)를 성립시키는 양의 상수 c를 가지고 있음을 의미한다.&lt;/li&gt;
+  &lt;li&gt;달리 표현하면, O(g(n))은 최악의 경우에도 점근적 증가율이 g(n)을 넘지 않음을 의미한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ω-표기법&quot;&gt;Ω-표기법&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ω(g(n))은 충분히 큰 n에 대하여 c(g(n))&amp;lt;=f(n)을 성립시키는 양의 상수 c를 가지고 있음을 의미한다.&lt;/li&gt;
+  &lt;li&gt;즉, Ω(g(n))은 하한의 개념을 가진다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;θ-표기법&quot;&gt;θ-표기법&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;θ(g(n))은 충분히 큰 n에 대하여 O(g(n))과 Ω(g(n))을 동시에 만족하는 함수 집합이다.&lt;/li&gt;
+  &lt;li&gt;즉, c1g(n) &amp;lt;= f(n) &amp;lt;= c2g(n) 을 성립시키는 c1과 c2가 존재한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;o-표기법-1&quot;&gt;o-표기법&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;o(g(n))은 충분히 큰 n에 대하여 함수 증가율이 항상 f(n)보다 큰 모든 함수의 집합을 의미한다.&lt;/li&gt;
+  &lt;li&gt;예를 들어 3n = o(n^2) 이다. 단, 5n^2 은 o(n^2)이 아니다(함수 증가율이 점근적으로 동일).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ω-표기법-1&quot;&gt;ω-표기법&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ω(g(n))은 o(g(n))과 반대로 충분히 큰 n에 대하여 함수 증가율이 항상 f(n)보다 작은 모든 함수 집합을 의미한다.&lt;/li&gt;
+  &lt;li&gt;예를 들어 3n^2 = ω(8n) 이다. 단, 3n^2 은 ω(n^2)이 아니다(함수 증가율이 점근적으로 동일).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;점화식의-시간복잡도-계산법&quot;&gt;점화식의 시간복잡도 계산법&lt;/h2&gt;
+
+&lt;h3 id=&quot;반복-대치&quot;&gt;반복 대치&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;점화식을 더 낮은 차수의 항으로 전개 및 변환하여 규칙을 찾고, 시간복잡도를 파악하는 방법.&lt;/li&gt;
+  &lt;li&gt;예를 들어 factorial 과정을 보면 아래와 같은 형식으로 규칙을 찾게 된다.
+T(n) = T(n-1) + c
+= T(n-2) + c + c = T(n-2) + 2c
+= T(n-3) + c + c + c = T(n-3) + 3c
+…
+= T(1) + (n-1)c
+&amp;lt;= c + (n-1)c
+= cn
+∴ T(n) = O(n)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;추정-후-귀납적으로-증명&quot;&gt;추정 후 귀납적으로 증명&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;점화식의 모양을 보고 복잡도를 유추한 뒤, 귀납적 증명법으로 명제를 증명하는 방법이다.&lt;/li&gt;
+  &lt;li&gt;증명 과정은 귀납적 가정과 참인 명제를 이용해 증명을 하며, 반복 대치 방법으로 풀어내기도 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;특정-경우에-대한-정리&quot;&gt;특정 경우에 대한 정리&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;f(n)/g(n) 에서
+    &lt;ol&gt;
+      &lt;li&gt;g(n)이 클 경우, g(n)이 수행 시간 결정&lt;/li&gt;
+      &lt;li&gt;f(n)이 클 경우, f(n)이 수행 시간 결정&lt;/li&gt;
+      &lt;li&gt;f(n)==g(n)이면, g(n)에 logn을 곱한 것이 수행 시간이 된다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;정렬-방법별-시간복잡도&quot;&gt;정렬 방법별 시간복잡도&lt;/h2&gt;
+
+&lt;h3 id=&quot;선택정렬selection-sort&quot;&gt;선택정렬(Selection Sort)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;배열 A[1…n]에서 가장 큰(혹은 가장 작은) 원소를 찾은 뒤 가장 마지막 인덱스 원소와 위치를 서로 바꾼다. 이후 A[1…(n-1)] 에서 같은 과정을 거친다.&lt;/li&gt;
+  &lt;li&gt;선택정렬은 원소의 수가 n에서 2까지 줄어드는 각 경우마다 (원소의 개수-1)만큼 비교를 진행하게 되므로,
+(n-1) _ (n-2) _ … _ 2 _ 1 = n(n-1)/2 가 된다. 즉, O(n^2)이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;버블정렬bubble-sort&quot;&gt;버블정렬(Bubble Sort)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;배열 A[1…n]에서 바로 인접해 있는 요소와 비교를 진행하여 더 큰(혹은 더 작은) 원소가 왼쪽으로 가도록 정렬한다. 이를 A[1…(n-1)] 에서 같은 과정을 거친다.&lt;/li&gt;
+  &lt;li&gt;버블정렬은 원소의 수가 n에서 2까지 줄어드는 각 경우마다 (원소의 개수-1)만큼 비교를 진행하게 되므로,
+(n-1) _ (n-2) _ … _ 2 _ 1 = n(n-1)/2 가 된다. 즉, O(n^2)이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;삽입정렬insertion-sort&quot;&gt;삽입정렬(Insertion Sort)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;삽입정렬은 배열 A[1…n]에서 요소를 차례대로 탐색하여 왼쪽 부분배열에 요소를 순서에 맞게 삽입하며 정렬한다.&lt;/li&gt;
+  &lt;li&gt;최고의 경우에는 배열이 이미 정렬되어 있어 상수 횟수의 시간복잡도를 가질 수 있다.&lt;/li&gt;
+  &lt;li&gt;최악의 경우에는 탐색된 요소가 A[1]자리에 계속해서 들어가게 되는데, 이 때의 시간복잡도는
+1 + 2 + … + (n-1) = n(n-1)/2, 즉 O(n^2)이 된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;병합정렬merge-sort&quot;&gt;병합정렬(Merge Sort)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A[n]의 배열을 반으로 나눈 뒤 각각을 정렬하고, 두 배열을 다시 하나로 합치는 과정의 정렬 방법이다.&lt;/li&gt;
+  &lt;li&gt;합치는 과정에서는 나눠진 두 배열의 요소들을 정렬 기준에 따라 하나씩 추출하여 정렬한다.
+&lt;img src=&quot;/assets/img/MergeSort.jpg&quot; alt=&quot;병합정렬 시간복잡도입니다.&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;heap-sort&quot;&gt;Heap Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;힙(Heap)이란 이진 트리의 자료구조로, 최소 힙과 최대 힙으로 나눌 수 있다.&lt;/li&gt;
+  &lt;li&gt;힙의 특징
+    &lt;ul&gt;
+      &lt;li&gt;마지막 레벨을 제외한 각 레벨의 노드는 모두 채워져야 한다.&lt;/li&gt;
+      &lt;li&gt;마지막 레벨에서는 왼쪽부터 채워져야 한다.&lt;/li&gt;
+      &lt;li&gt;최소 힙의 경우 부모 노드가 자식 노드보다 항상 작거나 같으며, 최대 힙의 경우 부모 노드가 항상 자식 노드보다 크거나 같다.
+&lt;img src=&quot;/assets/img/HeapSort.jpg&quot; alt=&quot;힙정렬 시간복잡도입니다.&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;quick-sort&quot;&gt;Quick Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;평균적으로 가장 좋은 성능을 가진 정렬 알고리즘.&lt;/li&gt;
+  &lt;li&gt;기준 원소를 두고, 기준 원소보다 작은 원소는 왼쪽에 큰 원소는 오른쪽에 두며 정렬한다. 마지막에는 작은 원소와 큰 원소 사이의 경계에 기준 원소를 위치시킨다.
+&lt;img src=&quot;/assets/img/QuickSort.jpg&quot; alt=&quot;퀵정렬 시간복잡도입니다.&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>CH</name></author><category term="Algorithm" /><category term="Basic" /><summary type="html">Study for Time Complexity</summary></entry><entry><title type="html">DAT</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/10/study-DAT.html" rel="alternate" type="text/html" title="DAT" /><published>2022-03-10T00:00:00+00:00</published><updated>2022-03-10T14:42:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/10/%5Bstudy%5DDAT</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/10/study-DAT.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;datdirect-address-table&quot;&gt;DAT(Direct Address Table)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DAT란 해시 테이블의 일종으로, 한 테이블의 키 값을 주소로 사용하는 테이블을 말한다.&lt;/li&gt;
+  &lt;li&gt;for 문을 돌려 배열을 탐색하는 것보다 빠르고 효율적으로 탐색을 진행할 수 있다.&lt;/li&gt;
+  &lt;li&gt;속도가 빠르나, 값이 index로 쓰이기에 지나치게 인덱스가 크거나 인덱스가 음수로 가는 경우에는 사용하기 어려우며, 사용할 키값이 문자열일 경우에도 사용이 어렵다.&lt;/li&gt;
+  &lt;li&gt;위의 맹점을 보완하기 위해 사용하는 방법은 다른 hash table(dictionary같이 key:value 구조를 갖는 것)이나 binary search tree가 있다.&lt;/li&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+	&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;dat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;hash-table추가-조사-필요&quot;&gt;Hash Table(추가 조사 필요)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;해시 테이블의 의의&lt;/li&gt;
+  &lt;li&gt;보안 분야 관련 해시 테이블의 중요도&lt;/li&gt;
+  &lt;li&gt;해시 함수를 사용할 때 중요한 것(충돌, 적재율)&lt;/li&gt;
+  &lt;li&gt;충돌 처리 기법&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>GitHub User</name></author><category term="Algorithm" /><category term="Basic" /><summary type="html">Study for DAT</summary></entry><entry><title type="html">Sort</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/10/study-sort.html" rel="alternate" type="text/html" title="Sort" /><published>2022-03-10T00:00:00+00:00</published><updated>2022-03-10T14:42:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/10/%5Bstudy%5Dsort</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/algorithm/2022/03/10/study-sort.html">&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;on2-sort&quot;&gt;O(n^2) Sort&lt;/h2&gt;
+
+&lt;h3 id=&quot;selection-sort&quot;&gt;Selection Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 단순한 정렬 방법.&lt;/li&gt;
+  &lt;li&gt;배열의 요소 n개를 모두 조회하여 가장 크거나 작은 원소를 찾고 해당 원소를 마지막 인덱스의 원소와 바꾼다. 이후 마지막 원소를 제외한 n-1 길이의 배열을 가지고 앞선 과정을 재차 거치며 전체 배열을 정렬하게 된다.&lt;/li&gt;
+  &lt;li&gt;배열의 요소들을 비교하는 총 횟수는 n(n-1)/2 이며, 수행 시간은 모든 경우에 O(n^2)이다.&lt;/li&gt;
+  &lt;li&gt;간소화된 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;selectionSort(A[], n)     // A[1...n] 을 정렬
+{
+  for last &amp;lt;- n downto 2 {
+    k &amp;lt;- theLargest(A, last);     // A[1...last] 중 가장 큰 수 A[k] 찾기
+    A[k] &amp;lt;-&amp;gt; A[last];     // A[k]와 A[last]의 값을 교환
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;bubble-sort&quot;&gt;Bubble Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;왼쪽부터 이웃한 수를 비교하면서 순서 기준에 맞게 위치를 바꿔나가는 정렬 방법.&lt;/li&gt;
+  &lt;li&gt;두 개의 Loop가 존재하며 바깥쪽의 Loop는 n-1번, 안쪽의 Loop는 last-1번 순환한다.&lt;/li&gt;
+  &lt;li&gt;즉, 총 순환 횟수는 n(n-1)/2 이며, 수행 시간은 O(n^2)이 된다.&lt;/li&gt;
+  &lt;li&gt;간소화된 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bubbleSort(A[], n)    // A[1...n] 을 정렬
+{
+  for last &amp;lt;- n downto 2
+    for i &amp;lt;- 1 to last-1
+      if(A[i] &amp;gt; A[i+1])
+        then A[i] &amp;lt;-&amp;gt; A[i+1];   //원소 교환
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;insertion-sort&quot;&gt;Insertion Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A[n]의 배열이 있을 때, 첫 요소부터 시작하여 요소를 하나씩 읽어가면서 해당 요소의 자리를 정렬 기준에 맞게 조정(삽입)하는 정렬 방법이다.&lt;/li&gt;
+  &lt;li&gt;위 과정에서 위치 조정을 위해 요소가 중간에 삽입되면 해당 요소보다 큰 요소들은 뒤로 한 자리씩 밀리게 된다.&lt;/li&gt;
+  &lt;li&gt;바깥 Loop는 n-1번 순환하며, 안쪽 Loop는 최대 i-1번 순환한다. 즉, 최악의 경우 순환 횟수는 n(n-1)/2이며, 최악의 수행 시간은 O(n^2)이다.&lt;/li&gt;
+  &lt;li&gt;간소화된 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insertionSort(A[], n)
+{
+  for i &amp;lt;- 2 to n {
+    loc &amp;lt;- i-1;
+    newItem &amp;lt;- A[i];
+    while(loc &amp;gt;= 1 and newItem &amp;lt; A[loc]) {
+      A[loc+1] &amp;lt;- A[loc];
+      loc--;
+    }
+    A[loc+1] &amp;lt;- newItem;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;onlogn-sort&quot;&gt;O(nlogn) Sort&lt;/h2&gt;
+
+&lt;h3 id=&quot;merge-sort&quot;&gt;Merge Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A[n]의 배열을 반으로 나눈 뒤 각각을 정렬하고, 두 배열을 다시 하나로 합치는 과정의 정렬 방법이다.&lt;/li&gt;
+  &lt;li&gt;합치는 과정에서는 나눠진 두 배열의 요소들을 정렬 기준에 따라 하나씩 추출하여 정렬한다.&lt;/li&gt;
+  &lt;li&gt;병합은 선형 시간이 소요되며, 총 소요시간은 최악의 경우 O(nlogn)이 된다. (시간복잡도를 계산하는 과정은 생략…)&lt;/li&gt;
+  &lt;li&gt;간소화된 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mergeSort(A[], p, r)      // A[p...r] 정렬
+{
+  if(p&amp;lt;r) then {
+    q &amp;lt;- p와 r의 중간지점;
+    mergeSort(A, p, q);
+    mergeSort(A, q+1, r);
+    merge(A, p, q, r);
+  }
+}
+
+merge(A[], p, q, r)
+{
+  t &amp;lt;- p;
+  j &amp;lt;- q+1;
+  t &amp;lt;- 1;
+
+  while(i&amp;lt;=q and j&amp;lt;=r) {
+    if(A[i]&amp;lt;=A[j])
+      then tmp[t++] &amp;lt;- A[i++];
+    else
+      tmp[t++] &amp;lt;- A[j++];
+  }
+
+  while(i&amp;lt;=q) {
+    tmp[t++] &amp;lt;- A[i++];
+  }
+
+  while(j&amp;lt;=r) {
+    tmp[t++] &amp;lt;- A[j++];
+  }
+
+  i &amp;lt;- p;
+  t &amp;lt;- 1;
+  while(i&amp;lt;=r) {
+    A[i++] &amp;lt;- tmp[t++];
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;heap-sort&quot;&gt;Heap Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;힙(Heap)이란 이진 트리의 자료구조로, 최소 힙과 최대 힙으로 나눌 수 있다.&lt;/li&gt;
+  &lt;li&gt;힙의 특징
+    &lt;ul&gt;
+      &lt;li&gt;마지막 레벨을 제외한 각 레벨의 노드는 모두 채워져야 한다.&lt;/li&gt;
+      &lt;li&gt;마지막 레벨에서는 왼쪽부터 채워져야 한다.&lt;/li&gt;
+      &lt;li&gt;최소 힙의 경우 부모 노드가 자식 노드보다 항상 작거나 같으며, 최대 힙의 경우 부모 노드가 항상 자식 노드보다 크거나 같다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;간소화된 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;buildHeap(A[], n)   // A[1...n]을 힙으로 만든다.
+{
+  for i &amp;lt;- n/2 downto 1 {
+    heapify(A, i, n);
+  }
+}
+
+heapify(A[], k, n)    // A[k]를 루트로 하는 트리를 힙 성질을 만족하도록 한다. A[k]의 두 자식을 루트로 하는 서브 트리는 힙 성질을 만족하는 상태이다.
+{
+  left &amp;lt;- 2k;
+  right &amp;lt;- 2k+1;
+
+  if(right &amp;lt;= n) then {     // 자식 노드가 2개여서 right가 있을 경우
+    if(A[left] &amp;lt; A[right]) {
+      smaller &amp;lt;- left;
+    } else {
+      smaller &amp;lt;- right;
+    }
+  }
+  else if (left &amp;lt;= n) {     // 자식 노드가 왼쪽에 하나만 있는 경우
+    smaller &amp;lt;- left;
+  }
+  else {                    // A[k]가 리프노드
+    return;
+  }
+
+  if (A[smaller] &amp;lt; A[k]) {
+    A[k] &amp;lt;-&amp;gt; A[smaller];
+    heapify(A.smaller.n);
+  }
+}
+
+heapSort(A, n)      // A[1...n] 을 정렬
+{
+  buildHeap(A, n);
+  for(i &amp;lt;- downto 2) {
+    A[1] &amp;lt;-&amp;gt; A[i];
+    heapify(A, 1, i-1);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;quick-sort&quot;&gt;Quick Sort&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;평균적으로 가장 좋은 성능을 가진 정렬 알고리즘.&lt;/li&gt;
+  &lt;li&gt;기준 원소를 두고, 기준 원소보다 작은 원소는 왼쪽에 큰 원소는 오른쪽에 두며 정렬한다. 마지막에는 작은 원소와 큰 원소 사이의 경계에 기준 원소를 위치시킨다.&lt;/li&gt;
+  &lt;li&gt;최악의 경우에는 O(n^2)의 시간복잡도를 가지지만, 평균적으로 O(nlogn)의 시간복잡도를 가진다.&lt;/li&gt;
+  &lt;li&gt;간소화된 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;quickSort(A[], p, r)
+{
+  if(p&amp;lt;r) {
+    q &amp;lt;- partition(A, p, r);
+    quickSort(A, p, q-1);
+    quickSort(A, q+1, r);
+  }
+}
+
+partition(A[], p, r)
+{
+  x &amp;lt;- A[r];    // 기준원소
+  i &amp;lt;- p-1;     // i는 1구역(기준 원소보다 작은 원소 그룹)의 끝지점
+  for j &amp;lt;- p to r-1 {     // j는 3구역(아직 정렬되지 않은 원소 그룹)의 시작지점
+    if(A[j] &amp;lt;= x) {
+      A[++i] &amp;lt;-&amp;gt; A[j];
+    }
+  }
+  A[i+1] &amp;lt;-&amp;gt; A[r];      // 기준 원소와 2구역(기준 원소보다 큰 원소 그룹) 첫 원소 교환
+  return i+1;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ 예시 코드&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>CH</name></author><category term="Algorithm" /><category term="Basic" /><summary type="html">Study for Sort</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://ssafy-jkpy.github.io//jekyll-theme-yat/jekyll/2018/12/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-12-07T00:00:00+00:00</published><updated>2018-12-07T00:00:00+00:00</updated><id>https://ssafy-jkpy.github.io//jekyll-theme-yat/jekyll/2018/12/07/welcome-to-jekyll</id><content type="html" xml:base="https://ssafy-jkpy.github.io//jekyll-theme-yat/jekyll/2018/12/07/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;section 1&lt;/h2&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;section 2&lt;/h2&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;$ a * b = c ^ b $&lt;/p&gt;
+
+&lt;p&gt;$ 2^{\frac{n-1}{3}} $&lt;/p&gt;
+
+&lt;p&gt;$ \int_a^b f(x)\,dx. $&lt;/p&gt;
+
+&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// prints 'Hi, Tom' to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jeffrey</name></author><category term="jekyll" /><category term="jekyll" /><category term="theme" /><category term="yat" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
